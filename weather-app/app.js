@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
   );
   let temperatureDegree = document.querySelector(".temperature-degree");
   let locationTimezone = document.querySelector(".location-timezone");
+  let temperatureSection = document.querySelector("degree-section");
+  let temparatureSpan = document.querySelector("degree-section span");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -32,7 +34,17 @@ window.addEventListener("load", () => {
 
           //Set Icon
           setIcons(icon, document.querySelector(".icon"));
-        }); //This is where we have the actual data
+
+          //Conversion of Fahrenheit to Celsious:
+
+          temperatureSection.addEventListener("click", () => {
+            if (temparatureSpan.textContent === "F") {
+              temparatureSpan.textContent = "C";
+            } else {
+              temparatureSpan.textContent = "F";
+            }
+          });
+        });
     });
   }
 
