@@ -1,6 +1,11 @@
 window.addEventListener("load", () => {
   let long;
   let lat;
+  let temperatureDescription = document.querySelector(
+    ".temperature-description"
+  );
+  let temperatureDegree = document.querySelector(".temperature-degree");
+  let locationTimezone = document.querySelector(".location-timezone");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -16,13 +21,31 @@ window.addEventListener("load", () => {
           return response.json(); //To convert information gained into JSON.
         })
         .then(data => {
-          console.log(data);
-          const { temperature, summary } = data.currently;
+          //console.log(data); //This is to see fetched data on console.
+          const { temperature, summary, icon } = data.currently;
+
+          //Set DOM Elements from the API
+
+          temperatureDegree.textContent = temperature;
+          temperatureDescription.textContent = summary;
+          locationTimezone.textContent = data.timezone;
+
+          //Set Icon
+          setIcons(icon, document.querySelector(".icon"));
         }); //This is where we have the actual data
     });
   }
+
+  // Icon
+  function setIcons(icon, iconID) {
+    const skycons = new Skycons({ color: "white" });
+    const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+    skycons.play();
+    return skycons.set(iconID, Skycons[currentIcon]);
+  }
 });
 
+//General notes for reference purpose
 //location, temparature-two big sections
 //get latitude and longitude frou our location
 //It's simple and built into Javascriipt
@@ -44,3 +67,7 @@ window.addEventListener("load", () => {
 //The information we get from this API(Application Program Interface) is conventional, we've to take this information and convert it into JSON.
 //So, with JSON we can easily use it in our JavaScript.
 //To do that we have run code line 16
+
+//To work on Icons
+//skycons
+//https://darkskyapp.github.io/skycons/
