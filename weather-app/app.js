@@ -6,8 +6,8 @@ window.addEventListener("load", () => {
   );
   let temperatureDegree = document.querySelector(".temperature-degree");
   let locationTimezone = document.querySelector(".location-timezone");
-  let temperatureSection = document.querySelector("degree-section");
-  let temparatureSpan = document.querySelector("degree-section span");
+  let temperatureSection = document.querySelector(".temperature");
+  let temparatureSpan = document.querySelector(".temperature span");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -32,6 +32,9 @@ window.addEventListener("load", () => {
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
 
+          //Fahrenheit-Celsius conversion formula
+          let celsius = (temperature - 32) * (5 / 9);
+
           //Set Icon
           setIcons(icon, document.querySelector(".icon"));
 
@@ -40,8 +43,10 @@ window.addEventListener("load", () => {
           temperatureSection.addEventListener("click", () => {
             if (temparatureSpan.textContent === "F") {
               temparatureSpan.textContent = "C";
+              temperatureDegree.textContent = Math.floor(celsius);
             } else {
               temparatureSpan.textContent = "F";
+              temperatureDegree.textContent = temperature;
             }
           });
         });
