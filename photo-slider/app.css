@@ -1,9 +1,10 @@
-@import url(
-  https://fonts.googleapis.com/css?family=source+code+Pro:200,
-  300,
-  400,
-  500,
-  600,
-  700,
-  900
-);
+h1 {
+  /* color: purple; */
+  font-weight: 200;
+}
+body {
+  background-color: #f69680;
+  color: #2e1263;
+  font-family: "Source code Pro", monospace;
+  font-weight: 200;
+}
