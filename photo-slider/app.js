@@ -6,6 +6,13 @@ var pics = [
   "images/img_5.jpg",
   "images/img_6.jpg"
 ];
+var img = document.querySelector("img");
+var btn = document.querySelector("button");
+var counter = 1;
+btn.addEventListener("click", function() {
+  img.src = pics[2];
+});
+
 /*Notes:
 -HTML is the structure.
 -css is the style.
