@@ -15,14 +15,19 @@
     <div class="container">
       <form action="" name="passGen">
         <input type="text" size="18" name="output" />
-        <input type="button" value="Generate password" onclick="" /> <br />
+        <input
+          type="button"
+          value="Generate password"
+          onclick="populateForm(this.form.length.value)"
+        />
+        <br />
         <strong>Password Length:</strong>
         <input type="text" name="length" size="3" value="8" />
       </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
     <script src="script.js"></script>
   </body>
 </html>
