@@ -1,5 +1,5 @@
 //In this proejct we'll create random password generator
-//After putting specified number one can get a unique password with letter, symbol and numbers
+//After putting specified number we can get a unique password with letter, symbol and numbers
 
 var keyList =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*"';
