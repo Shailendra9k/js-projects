@@ -7,11 +7,24 @@ video {
   left: 50%;
   margin-top: -50%;
   margin-left: -50%;
-  z-index: 1; /*Allows to put object at top or bottom.*/
+  z-index: 1; /*Allows to get postion of object at top or bottom.*/
 }
 div {
   position: relative;
   z-index: 2;
   margin: 0 auto;
   max-width: 720px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 25px;
+  color: rgb(39, 39, 39);
+  font-size: 44px;
+}
+p {
+  color: white;
+  background-color: grey;
+  opacity: 0.7;
 }
